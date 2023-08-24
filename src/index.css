@@ -7,7 +7,7 @@
   --bunker: #040606;
   --caribbean-green: #04c2a3;
   --gossamer: #049b82;
-  --persian-green: #04b494;
+  --persian-green: #04b49410;
   --watercourse: #04725e;
   --observatory: #048c73;
   --watercourse: #045e4c;
@@ -23,6 +23,7 @@
   width: 100%;
   overflow: hidden;
   line-height: 0;
+  pointer-events: none;
 }
 
 .custom-shape-divider-top-1692742317 svg {
@@ -33,5 +34,54 @@
 }
 
 .custom-shape-divider-top-1692742317 .shape-fill {
-  fill: rgba(255, 0, 0, 0.1);
+  fill: var(--persian-green);
+}
+
+/* ALL PAGES SHAPE TRIANGULE*/
+
+.custom-shape-divider-top-1692901662 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.custom-shape-divider-top-1692901662 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 500px;
+}
+
+.custom-shape-divider-top-1692901662 .shape-fill {
+  fill: #ffffff90;
+}
+
+/* BOTTOM SHAPE WAVES OPACITY */
+
+.custom-shape-divider-bottom-1692902009 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.custom-shape-divider-bottom-1692902009 svg {
+  position: relative;
+  display: block;
+  width: calc(150% + 1.3px);
+  height: 250px;
+}
+
+.custom-shape-divider-bottom-1692902009 .shape-fill {
+  fill: #FFFFFF;
 }

@@ -25,7 +25,7 @@ export default function Beneficios() {
       <h1 className="font-[600] text-[2rem]">Principais Beneficios</h1>
       <div className="flex flex-wrap items-center justify-center gap-4 py-4">
         {beneficios.map((beneficio, index) => (
-          <div className="flex flex-col w-[26rem] gap-1 text-center p-4 bg-red-100 items-center rounded-xl" key={index}>
+          <div className="flex flex-col w-[26rem] gap-1 text-center p-4 bg-light-green-opacity items-center rounded-xl" key={index}>
             {beneficio.icon}
             <h3 className="font-[600] text-[1.15rem]">{beneficio.name}</h3>
             <p>{beneficio.desc}</p>

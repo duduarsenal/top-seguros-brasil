@@ -14,23 +14,32 @@ import { FaHeadphonesAlt } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import { AiFillPhone } from "react-icons/ai";
 import { BsFillPersonFill, BsExclamationCircleFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
     <footer className="flex w-full items-center justify-evenly flex-wrap px-8 py-2">
       <div className="footer 1 flex items-center gap-4">
         <div>
-          <div className="flex items-center text-[1.5rem]">
+          <Link to="/" className="flex items-center text-[1.5rem]">
             <AiFillHome />
             <h2 className="font-[600] leading-none">TSB</h2>
-          </div>
+          </Link>
           <div>
             <p>Nossas redes sociais</p>
             <div className="flex w-full justify-between text-[2.2rem]">
-              <AiFillFacebook />
-              <AiFillInstagram />
-              <AiFillYoutube />
-              <AiFillTwitterSquare />
+              <a href="https://facebook.com" target="_blank" className="hover:text-regular-green transition-all">
+                <AiFillFacebook />
+              </a>
+              <a href="https://instagram.com" target="_blank" className="hover:text-regular-green transition-all">
+                <AiFillInstagram />
+              </a>
+              <a href="https://youtube.com" target="_blank" className="hover:text-regular-green transition-all">
+                <AiFillYoutube />
+              </a>
+              <a href="https://twitter.com" target="_blank" className="hover:text-regular-green transition-all">
+                <AiFillTwitterSquare />
+              </a>
             </div>
           </div>
         </div>
