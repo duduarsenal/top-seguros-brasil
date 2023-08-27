@@ -18,8 +18,8 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="flex w-full items-center justify-evenly flex-wrap px-8 py-2">
-      <div className="footer 1 flex items-center gap-4">
+    <footer className="flex w-full items-center justify-evenly flex-wrap px-8 py-2 gap-4">
+      <div className="footer 1 flex flex-wrap items-center gap-4">
         <div>
           <Link to="/" className="flex items-center text-[1.5rem]">
             <AiFillHome />
@@ -66,7 +66,7 @@ export default function Footer() {
       {/*----------------------------------------------- CONTATOS --------------------------------------------------*/}
       <div className="footer 2 flex flex-col gap-1">
         <h1 className="text-[1.5rem]">Contatos</h1>
-        <div className="flex gap-4">
+        <div className="flex flex-wrap sm:gap-4">
           <div>
             <div className="flex items-center gap-1">
               <BsExclamationCircleFill />
@@ -102,7 +102,7 @@ export default function Footer() {
       {/*----------------------------------------------- TRANSPARÊNCIA --------------------------------------------------*/}
       <div className="footer 3 flex flex-col gap-1">
         <h1 className="text-[1.5rem]">Transparência</h1>
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-wrap sm:gap-4">
           <div>
             <p>Quem somos</p>
             <p>Trabalhe Conosco</p>
