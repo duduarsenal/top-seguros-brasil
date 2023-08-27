@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .hoverSecures:hover .moreSecure{
+    opacity: 100;
+    transition: all .3s ease-in-out;
+    margin-top: .5rem;
+  }
+}
+
 * {
   font-family: "Poppins", sans-serif;
   --bunker: #040606;
