@@ -1,18 +1,37 @@
+import { useEffect, useState } from "react";
 import SimulacaoBox from "../../components/SimulaçãoBox/SimulacaoBox";
+import { GetPriceSelector } from "../../api/getPriceSelector";
 
 export default function Simulacao() {
+
+  const [priceSelector, setPriceSelector] = useState([]);
+
+  useEffect(() => {
+      GetPriceSelector()
+      .then((data) => {
+        setPriceSelector(data)
+        // console.log(priceSelector)
+      })
+      .catch((error) => console.log(error))
+  }, [])
   return (
     <div className="min-h-[calc(100vh-220px)] flex flex-col px-8">
       <h1 className="text-[1.5rem] font-[500] text-center py-4">
         Personalize seu plano de seguro com o preço que cabe no seu bolso!
       </h1>
       <div className="w-full items-center justify-center flex flex-wrap gap-8 py-4">
-        <SimulacaoBox />
-        <SimulacaoBox />
-        <SimulacaoBox />
-        <SimulacaoBox />
-        <SimulacaoBox />
-        <SimulacaoBox />
+      {
+          priceSelector.map((item) => (
+            <SimulacaoBox 
+            key={item.title}
+            title={item.title} 
+            montlyPayment={item.montlyPayment} 
+            numberOfMonths={item.numberOfMonths} 
+            sinistroTax={item.sinistroTax}
+            priceList={item.priceList}
+            />
+          ))
+        }
       </div>
     </div>
   );
