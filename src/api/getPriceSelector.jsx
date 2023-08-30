@@ -1,6 +1,6 @@
 export const GetPriceSelector = async () => {
 
-    const urlAPI = "http://localhost:3030/insurances"
+    const urlAPI = `${import.meta.env.VITE_BACKEND_URL}/insurances`;
 
     try {
         const urlResponse = await fetch(urlAPI);
