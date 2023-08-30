@@ -12,15 +12,15 @@ export default function Cadastrar() {
 
                 <div className="sm:min-w-[450px] py-3">
                     <div className="relative flex flex-col justify-between pt-[1rem] my-[1rem]">
-                        <input className="pt-[.4rem] border-b-2 outline-none transition-all focus:border-regular-green" type="text" id="nome" autocomplete="off"/>
+                        <input className="pt-[.4rem] border-b-2 outline-none transition-all focus:border-regular-green" type="text" id="nome" autoComplete="off"/>
                         <label className="absolute top-0 left-0 w-max text-[1.15rem] text-center" htmlFor="nome">Nome</label>
                     </div>
                     <div className="relative flex flex-col justify-between pt-[1rem] my-[1rem]">
-                        <input className="pt-[.4rem] border-b-2 outline-none transition-all focus:border-regular-green" type="text" id="usuario" autocomplete="off"/>
+                        <input className="pt-[.4rem] border-b-2 outline-none transition-all focus:border-regular-green" type="text" id="usuario" autoComplete="off"/>
                         <label className="absolute top-0 left-0 w-max text-[1.15rem] text-center" htmlFor="usuario">Usuário</label>
                     </div>
                     <div className="relative flex flex-col justify-between pt-[1rem] my-[1rem]">
-                        <input className="pt-[.4rem] border-b-2 outline-none transition-all focus:border-regular-green" type="text" id="email" autocomplete="off"/>
+                        <input className="pt-[.4rem] border-b-2 outline-none transition-all focus:border-regular-green" type="text" id="email" autoComplete="off"/>
                         <label className="absolute top-0 left-0 w-max text-[1.15rem] text-center" htmlFor="email">E-mail</label>
                     </div>
                     <div className="relative flex flex-col justify-between pt-[1rem] my-[1rem]">

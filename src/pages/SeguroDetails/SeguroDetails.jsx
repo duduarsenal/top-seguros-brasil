@@ -1,12 +1,5 @@
 import { useParams } from "react-router-dom";
-import {
-  BsFire,
-  BsFillBuildingFill,
-  BsWind,
-  BsPeopleFill,
-  BsLightningFill,
-  BsShieldFill,
-} from "react-icons/bs";
+import { BsFire, BsFillBuildingFill, BsWind, BsPeopleFill, BsLightningFill, BsShieldFill } from "react-icons/bs";
 
 export default function SeguroDetails() {
   const { id } = useParams();

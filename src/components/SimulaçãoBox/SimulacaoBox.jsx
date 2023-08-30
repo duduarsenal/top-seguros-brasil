@@ -1,12 +1,7 @@
-import {
-  BsFire,
-  BsFillBuildingFill,
-  BsWind,
-  BsPeopleFill,
-  BsLightningFill,
-  BsShieldFill,
-} from "react-icons/bs";
+import { BsFire, BsFillBuildingFill, BsWind, BsPeopleFill, BsLightningFill, BsShieldFill } from "react-icons/bs";
+
 import { Listbox } from "@headlessui/react";
+
 import { useEffect, useState } from "react";
 
 
@@ -14,10 +9,10 @@ export default function SimulacaoBox(props) {
   // const pricesList = (props.priceList);
   const [selectedPrice, setSelectedPrice] = useState(props.priceList[0]);
 
-  useEffect(() => {
-    // console.log(selectedPrice)
-    // console.log((parseFloat(selectedPrice.value) / props.numberOfMonths) * props.sinistroTax)
-  }, [selectedPrice])
+  // useEffect(() => {
+  //   console.log(selectedPrice)
+  //   console.log((parseFloat(selectedPrice.value) / props.numberOfMonths) * props.sinistroTax)
+  // }, [selectedPrice])
 
   return (
     <section className="flex flex-col gap-4 p-4 items-center w-max min-w-[20rem] h-max bg-light-green-opacity rounded-lg">

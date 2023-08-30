@@ -17,7 +17,7 @@ export default function Login() {
                 <div className="flex flex-col gap[.75rem] py-4">
                     
                     <div className="relative flex flex-col justify-between pt-[1rem] px-[.75rem] my-[1rem]">
-                        <input className="pt-[.4rem] border-b-2 outline-none w-[260px] transition-all focus:border-regular-green" type="text" id="usuario" autocomplete="off"/>
+                        <input className="pt-[.4rem] border-b-2 outline-none w-[260px] transition-all focus:border-regular-green" type="text" id="usuario" autoComplete="off"/>
                         <label className="absolute top-0 left-0 w-max text-[1.15rem] text-center px-[.75rem]" htmlFor="usuario">Usuario/E-mail</label>
                     </div>
 

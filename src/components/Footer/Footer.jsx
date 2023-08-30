@@ -1,12 +1,5 @@
 import { AiFillHome } from "react-icons/ai";
-
-import {
-  AiFillFacebook,
-  AiFillInstagram,
-  AiFillYoutube,
-  AiFillTwitterSquare,
-} from "react-icons/ai";
-
+import { AiFillFacebook, AiFillInstagram, AiFillYoutube, AiFillTwitterSquare } from "react-icons/ai";
 import { BsAndroid2, BsApple } from "react-icons/bs";
 
 import { ImLocation } from "react-icons/im";
@@ -14,6 +7,7 @@ import { FaHeadphonesAlt } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import { AiFillPhone } from "react-icons/ai";
 import { BsFillPersonFill, BsExclamationCircleFill } from "react-icons/bs";
+
 import { Link } from "react-router-dom";
 
 export default function Footer() {
