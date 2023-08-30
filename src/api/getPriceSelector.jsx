@@ -4,8 +4,8 @@ export const GetPriceSelector = async () => {
 
     try {
         const urlResponse = await fetch(urlAPI);
-        const response = await urlResponse.json();
-        return await response;
+        const response = urlResponse.json();
+        return response;
     } catch (error) {
         throw new Error(error)
     }
