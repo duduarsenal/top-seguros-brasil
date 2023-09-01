@@ -1,6 +1,6 @@
 export default function Cadastrar() {
     return ( 
-        <div className="min-h-[calc(100vh-220px)] flex items-center justify-center">
+        <div className="flex items-center justify-center">
             <form className="flex flex-col justify-between bg-white w-max sm:min-h-[20rem] sm:min-w-[20rem] sm:p-4 p-2 border-2 border-black rounded-lg">
 
                 <h1 className="text-[1.5rem] font-[600] text-center">Crie sua Conta</h1>

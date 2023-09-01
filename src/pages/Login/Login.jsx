@@ -22,7 +22,7 @@ export default function Login() {
     }
     
     return ( 
-        <div className="min-h-[calc(100vh-220px)] flex items-center justify-center">
+        <div className="flex items-center justify-center">
             <form className="flex flex-col justify-between bg-white sm:min-h-[20rem] min-w-[20rem] w-max p-2 sm:p-4 border-2 border-black rounded-lg" onSubmit={handleBtn}>
 
                 <h1 className="text-[1.5rem] font-[600] text-center">Acesse sua conta</h1>

@@ -26,7 +26,7 @@ export default function Simulacao() {
   const {userID} = useContext(UserContext)
 
   return (
-      <div className="min-h-[calc(100vh-220px)] flex flex-col px-8">
+      <div className="flex flex-col justify-start items-start px-8">
         <h1 className="text-[1.5rem] font-[500] text-center py-4">
           Personalize seu plano de seguro com o preço que cabe no seu bolso!
         </h1>
