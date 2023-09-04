@@ -8,17 +8,22 @@ export default function Login() {
     const [nameValue, setNameValue] = useState("")
     const [passValue, setPassValue] = useState("")
 
-    const {userID, setUserID} = useContext(UserContext);
+    const {setIsLogged} = useContext(UserContext);
 
     const handleBtn = (e) => {
         e.preventDefault();
 
         AuthLogin(nameValue, passValue)
-        .then((data) => setUserID(data.userID))
-        .then(() => { navigate("/") })
+        .then((data) => { 
+            setIsLogged(true);
+            localStorage.setItem("tjwt", data.tokenJWT);
+        })
+        .then(() => { navigate("/perfil") })
         .catch((error) => console.log(error))
-        // console.log(nameValue, passValue)
-        // return navigate("/");
+    }
+
+    function teste(){
+        console.log("teste")
     }
     
     return ( 
