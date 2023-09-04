@@ -16,6 +16,15 @@ export default {
         'dark-green': '#04544c',
         'dark-green-opacity': '#04544c60',
       },
+      keyframes: {
+        wiggle: {
+          '0%, 40%, 80%': {marginLeft: '-5px'},
+          '20%, 60%, 100%': {marginLeft: '0', marginRight: '-5px'},
+        }
+      },
+      animation: {
+        wiggle: 'wiggle .5s ease-in-out',
+      }
     },
   },
   plugins: [],

@@ -8,14 +8,14 @@ export default function Login() {
     const [nameValue, setNameValue] = useState("")
     const [passValue, setPassValue] = useState("")
 
-    const {setUserID} = useContext(UserContext);
+    const {userID, setUserID} = useContext(UserContext);
 
     const handleBtn = (e) => {
         e.preventDefault();
 
         AuthLogin(nameValue, passValue)
         .then((data) => setUserID(data.userID))
-        .then(() => navigate("/"))
+        .then(() => { navigate("/") })
         .catch((error) => console.log(error))
         // console.log(nameValue, passValue)
         // return navigate("/");
