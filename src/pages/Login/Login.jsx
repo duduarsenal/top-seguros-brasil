@@ -21,10 +21,6 @@ export default function Login() {
         .then(() => { navigate("/perfil") })
         .catch((error) => console.log(error))
     }
-
-    function teste(){
-        console.log("teste")
-    }
     
     return ( 
         <div className="flex items-center justify-center">

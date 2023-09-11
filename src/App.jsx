@@ -9,7 +9,7 @@ import { TriangleTop, WavesOpacityBottom } from "./components/Shapes/Shapes";
 import { AuthUser } from "./api/authUser";
 import { UserContext } from "./context/UserContext";
 function App() {
-  const [error, setError] = useState({ state: false, message: "Message undefined" });
+  const [error, setError] = useState({ state: false, message: "Error Message" });
   const {setIsLogged} = useContext(UserContext);
 
   useEffect(() => {

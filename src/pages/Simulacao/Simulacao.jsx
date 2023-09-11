@@ -1,9 +1,9 @@
-import { useContext, useEffect, useState } from "react";
-import SimulacaoBox from "../../components/SimulaçãoBox/SimulacaoBox";
-import { GetPriceSelector } from "../../api/getPriceSelector";
+import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 
-import { UserContext } from '../../context/UserContext'
+import SimulacaoBox from "../../components/SimulaçãoBox/SimulacaoBox";
+
+import { GetPriceSelector } from "../../api/getPriceSelector";
 
 
 export default function Simulacao() {
@@ -11,7 +11,7 @@ export default function Simulacao() {
   const pricesTotal = {};
 
   const [priceSelector, setPriceSelector] = useState([]);
-  const [error, setError] = useOutletContext()
+  const [error, setError] = useOutletContext();
 
   useEffect(() => {
     GetPriceSelector()
@@ -19,11 +19,7 @@ export default function Simulacao() {
     .catch((error) => setError({state: true, message: "Erro na conexão com o Banco de Dados"}) )
   }, [])
 
-  // useEffect(() => {
-  //   console.log(pricesTotal)
-  // }, [pricesTotal])
-
-  const {userID} = useContext(UserContext)
+  // const {userID} = useContext(UserContext)
 
   return (
       <div className="flex flex-col justify-start items-start px-8">
