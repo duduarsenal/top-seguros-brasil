@@ -1,5 +1,5 @@
 export async function CreateUser(name, username, email, password){
-    const urlCreate = `${import.meta.env.VITE_BACKEND_URL}/users/register`
+    const urlCreate = `${import.meta.env.VITE_BACKEND_URL}/user/register`
 
     try {
         const urlResponse = await fetch(urlCreate, {

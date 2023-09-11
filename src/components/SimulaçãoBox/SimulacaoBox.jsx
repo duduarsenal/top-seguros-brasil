@@ -17,7 +17,7 @@ export default function SimulacaoBox(props) {
 
   useEffect(() => {
     props.pricesTotal[props.index] = { value: selectedPrice.text, assinatura: selectedPlan, secure: props.id};
-    console.log(props.pricesTotal);
+    // console.log(props.pricesTotal);
   }, [selectedPrice, selectedPlan])
 
   return (
