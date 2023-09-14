@@ -17,9 +17,9 @@ export default function Header() {
                 <li className="h-full"><Link to="/" className="h-full flex items-center px-6 hover:bg-light-green-opacity">Inicio</Link></li>
                 {/* <li className="h-full"><Link to="/" className="w-max h-full flex items-center px-6 hover:bg-light-green-opacity">Nossos Seguros</Link></li> */}
                 <li className="h-full"><Link to="/simulacao" className="h-full flex items-center px-6 hover:bg-light-green-opacity">Simulação</Link></li>
-                <li className="h-full"><Link to="/login" className="h-full flex items-center px-6 hover:bg-light-green-opacity">Login</Link></li>
-                <li className="h-full"><Link to="/perfil" className={`${isLogged ? 'flex' : 'hidden'} h-full items-center px-6 hover:bg-light-green-opacity`}>Perfil</Link></li>
-                <li className="h-full"><Link to="/cadastro" className="h-full flex items-center px-6 hover:bg-light-green-opacity">Cadastrar</Link></li>
+                <li className={`${!isLogged ? 'flex' : 'hidden'} h-full`}><Link to="/login" className="h-full flex items-center px-6 hover:bg-light-green-opacity">Login</Link></li>
+                <li className={`${!isLogged ? 'flex' : 'hidden'} h-full`}><Link to="/cadastro" className="h-full flex items-center px-6 hover:bg-light-green-opacity">Cadastrar</Link></li>
+                <li className={`${isLogged ? 'flex' : 'hidden'} h-full`}><Link to="/perfil" className="h-full flex items-center px-6 hover:bg-light-green-opacity">Perfil</Link></li>
             </ul>
         </nav>
      );

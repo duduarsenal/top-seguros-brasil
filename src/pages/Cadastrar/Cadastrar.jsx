@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import { CreateUser } from "../../api/createUser";
 
 export default function Cadastrar() {
     const navigate = useNavigate();
 
-    const [error, setError] = useState({status: false, message: ""}) //Aviso caso tenha algum erro
+    const [failed, setFailed] = useState({status: false, message: ""}) //Aviso caso tenha algum erro
     const [sucess, setSucess] = useState({status: false, message: ""})
     
     const [name, setName] = useState("")
@@ -15,15 +15,17 @@ export default function Cadastrar() {
     const [repass, setRepass] = useState("")
 
     const [warn, setWarn] = useState(false) //Aviso caso as senhas não sejam iguais
+
+    const [error, setError] = useOutletContext();
     
     const handleBtn = (e) => { 
         e.preventDefault();
 
         if (!name || !username || !email || !pass || !repass){
             setSucess({status: false})
-            setError({status: false})
+            setFailed({status: false})
             setTimeout(() => {
-                setError({status: true, color: 'red', message: "Preencha todos os campos"})
+                setFailed({status: true, color: 'red', message: "Preencha todos os campos"})
             }, 0)
             console.log("Preencha todos os campos")
         } else if (warn){
@@ -35,7 +37,7 @@ export default function Cadastrar() {
         } else { 
             CreateUser(name, username, email, pass)
             .then((data) => {
-                setError({status: false})
+                setFailed({status: false})
                 setSucess({status: true, color: 'green', message: "Registro feito com sucesso, redirecionando..."})
                 console.log(data);
                 // setTimeout(() => {
@@ -43,11 +45,10 @@ export default function Cadastrar() {
                 // }, 1500)
             })
             .catch((error) => {
+                console.log(error)
+                setFailed({status: false})
                 setSucess({status: false})
-                setError({status: false})
-                setTimeout(() => {
-                    setError({status: true, message: error.message})
-                }, 50)
+                setError({state: true, message: "Erro na conexão, tente novamente mais tarde"})
             });
         }
     }
@@ -59,7 +60,7 @@ export default function Cadastrar() {
                 <h1 className="text-[1.5rem] font-[600] text-center">Crie sua Conta</h1>
 
                 <div className="relative w-full flex justify-center -mb-9 -mt-3 h-[2rem]">
-                    <div className={`absolute h-full ${error.status ? 'initial' : 'hidden'} flex items-center animate-wiggle bg-red-200 w-max px-2 py-2 font-[500] rounded-md text-red-600 `}>{error.message}</div>
+                    <div className={`absolute h-full ${failed.status ? 'initial' : 'hidden'} flex items-center animate-wiggle bg-red-200 w-max px-2 py-2 font-[500] rounded-md text-red-600 `}>{failed.message}</div>
                     <div className={`absolute h-full ${sucess.status ? 'initial' : 'hidden'} flex items-center animate-wiggle bg-green-200 w-max px-2 py-2 font-[500] rounded-md text-green-700 `}>{sucess.message}</div>
                 </div> 
 

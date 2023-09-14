@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import { AuthLogin } from "../../api/authLogin";
 import { UserContext } from "../../context/UserContext";
 
@@ -9,6 +9,7 @@ export default function Login() {
     const [passValue, setPassValue] = useState("")
 
     const {setIsLogged} = useContext(UserContext);
+    const [error, setError] = useOutletContext();
 
     const handleBtn = (e) => {
         e.preventDefault();
@@ -19,7 +20,10 @@ export default function Login() {
             localStorage.setItem("tjwt", data.tokenJWT);
         })
         .then(() => { navigate("/perfil") })
-        .catch((error) => console.log(error))
+        .catch((error) => {
+            console.log(error)
+            setError({state: true, message: "Erro na conexão, tente novamente mais tarde"})
+        })
     }
     
     return ( 

@@ -17,10 +17,10 @@ function App() {
   }, [])
 
   return (
-    <div className="min-h-screen h-max flex flex-col justify-between">
+    <div className="min-h-screen h-max flex flex-col">
       <ErrorPopup error={error} setError={setError} />
         <Header />
-        <main className="w-full min-h-[calc(100vh-220px)] relative py-4 bg-regular-green-opacity z-0">
+        <main className="w-full min-h-[calc(100vh-180px)] relative py-4 bg-regular-green-opacity z-0">
           <TriangleTop />
           <div className="max-w-[1360px] m-auto">
             <Outlet context={[ error, setError]} />
