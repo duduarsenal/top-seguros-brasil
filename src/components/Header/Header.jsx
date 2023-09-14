@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import Logo from '../../assets/favicon.png'
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../context/UserContext";
 
-export default function Header() {
+export default function Header(props) {
 
     const {isLogged} = useContext(UserContext)
 
     return ( 
-        <nav className="flex justify-between h-[3.25rem] px-4">
+        <nav className={`${props.page.path ? 'ml-[210px]' : 'ml-0'} flex justify-between h-[3.25rem] px-4`}>
             <div className="flex gap-4 items-center">
                 <img src={Logo} alt="Logo TSB" className="w-[3rem] h-max"/>
                 <p className="font-[600] text-black-green text-[1.5rem]">Top Seguros Brasil</p>
@@ -19,7 +19,7 @@ export default function Header() {
                 <li className="h-full"><Link to="/simulacao" className="h-full flex items-center px-6 hover:bg-light-green-opacity">Simulação</Link></li>
                 <li className={`${!isLogged ? 'flex' : 'hidden'} h-full`}><Link to="/login" className="h-full flex items-center px-6 hover:bg-light-green-opacity">Login</Link></li>
                 <li className={`${!isLogged ? 'flex' : 'hidden'} h-full`}><Link to="/cadastro" className="h-full flex items-center px-6 hover:bg-light-green-opacity">Cadastrar</Link></li>
-                <li className={`${isLogged ? 'flex' : 'hidden'} h-full`}><Link to="/perfil" className="h-full flex items-center px-6 hover:bg-light-green-opacity">Perfil</Link></li>
+                <li className={`${isLogged ? 'flex' : 'hidden'} h-full`}><Link to="/perfil/profile" className="h-full flex items-center px-6 hover:bg-light-green-opacity">Perfil</Link></li>
             </ul>
         </nav>
      );

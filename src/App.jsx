@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -11,23 +11,28 @@ import { UserContext } from "./context/UserContext";
 function App() {
   const [error, setError] = useState({ state: false, message: "Error Message" });
   const {setIsLogged} = useContext(UserContext);
+  const path = useParams();
 
   useEffect(() => {
     setIsLogged(AuthUser());
   }, [])
 
+  useEffect(() => {
+    console.log(path)
+  }, [path])
+
   return (
     <div className="min-h-screen h-max flex flex-col">
       <ErrorPopup error={error} setError={setError} />
-        <Header />
-        <main className="w-full min-h-[calc(100vh-180px)] relative py-4 bg-regular-green-opacity z-0">
+        <Header page={path}/>
+        <main className="w-full min-h-[calc(100vh-180px)] h-max relative bg-regular-green-opacity z-0">
           <TriangleTop />
-          <div className="max-w-[1360px] m-auto">
+          <div className="max-w-[1360px] mx-auto h-full">
             <Outlet context={[ error, setError]} />
           </div>
           <WavesOpacityBottom />
         </main>
-        <Footer />
+        <Footer page={path}/>
     </div>
   );
 }

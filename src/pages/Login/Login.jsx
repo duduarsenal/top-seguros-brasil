@@ -19,7 +19,7 @@ export default function Login() {
             setIsLogged(true);
             localStorage.setItem("tjwt", data.tokenJWT);
         })
-        .then(() => { navigate("/perfil") })
+        .then(() => { navigate("/perfil/profile") })
         .catch((error) => {
             console.log(error)
             setError({state: true, message: "Erro na conexão, tente novamente mais tarde"})

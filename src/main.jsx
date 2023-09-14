@@ -11,7 +11,7 @@ import Cadastrar from "./pages/Cadastrar/Cadastrar";
 import ErrorPage from "./pages/Error/ErrorPage";
 import Perfil from './pages/Perfil/Perfil'
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, useParams } from "react-router-dom";
 import { PrivateRoute } from "./routes/PrivateRoute.jsx";
 import { AuthUser } from "./api/authUser.jsx";
 import { UserProvider } from "./context/UserContext.jsx";
@@ -34,12 +34,13 @@ const router = createBrowserRouter([
         element: <Simulacao />,
       },
       {
-        path: "/perfil",
+        path: "/perfil/:path",
         element: (
           <PrivateRoute AuthUser={AuthUser}>
             <Perfil />
           </PrivateRoute>
         ),
+        
       },
       {
         path: "/login",

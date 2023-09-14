@@ -40,9 +40,9 @@ export default function Cadastrar() {
                 setFailed({status: false})
                 setSucess({status: true, color: 'green', message: "Registro feito com sucesso, redirecionando..."})
                 console.log(data);
-                // setTimeout(() => {
-                //     navigate("/login")
-                // }, 1500)
+                setTimeout(() => {
+                    navigate("/login")
+                }, 1500)
             })
             .catch((error) => {
                 console.log(error)

@@ -1,7 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { BsFire, BsFillBuildingFill, BsWind, BsPeopleFill, BsLightningFill, BsShieldFill } from 'react-icons/bs'
+import { useEffect } from "react";
 
 export default function Seguros() {
+  const useSearch = useSearchParams();
+  useEffect(() => {
+    console.log(useSearch)
+  },[])
   const seguros = [
     {
       icon: <BsFire className="text-[3rem]"/>,
