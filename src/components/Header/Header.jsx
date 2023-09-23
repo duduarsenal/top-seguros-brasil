@@ -10,10 +10,6 @@ export default function Header(props) {
     const [verPerfil, setVerPerfil] = useState(false)
     const udt = sessionStorage.getItem('udt'); 
 
-    function handleVerPerfil(){
-        setVerPerfil(!verPerfil)
-    }
-
     return ( 
         <nav className={`flex justify-between h-[3.25rem] px-4 z-10 bg-white`}>
             <div className="flex gap-4 items-center">
@@ -26,7 +22,7 @@ export default function Header(props) {
                 <li className="h-full"><Link to="/simulacao" className="h-full flex items-center px-6 hover:bg-light-green-opacity">Simulação</Link></li>
                 <li className={`${!isLogged ? 'flex' : 'hidden'} h-full`}><Link to="/login" className="h-full flex items-center px-6 hover:bg-light-green-opacity">Login</Link></li>
                 <li className={`${!isLogged ? 'flex' : 'hidden'} h-full`}><Link to="/cadastro" className="h-full flex items-center px-6 hover:bg-light-green-opacity">Cadastrar</Link></li>
-                <li className={`${isLogged ? 'flex' : 'hidden'} h-full`} onMouseEnter={handleVerPerfil} onMouseLeave={handleVerPerfil}>
+                <li className={`${isLogged ? 'flex' : 'hidden'} h-full`} onMouseEnter={setVerPerfil(!verPerfil)} onMouseLeave={setVerPerfil(!verPerfil)}>
                     <Link to="/perfil" className="h-full flex flex-row-reverse gap-2 items-center px-6 hover:bg-light-green-opacity">
                         <FaUserCircle className="text-[1.75rem]"/>
                         <div>                        
