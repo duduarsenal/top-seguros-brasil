@@ -3,10 +3,11 @@ import { BsFire, BsFillBuildingFill, BsWind, BsPeopleFill, BsLightningFill, BsSh
 import { useEffect } from "react";
 
 export default function Seguros() {
-  const useSearch = useSearchParams();
-  useEffect(() => {
-    console.log(useSearch)
-  },[])
+  // const useSearch = useSearchParams();
+  // useEffect(() => {
+  //   console.log(useSearch)
+  // },[])
+
   const seguros = [
     {
       icon: <BsFire className="text-[3rem]"/>,

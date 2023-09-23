@@ -24,6 +24,7 @@ export default function Presentation() {
       typed.destroy();
     };
   }, []);
+  
   return (
     <section className="relative flex items-center justify-center h-max max-w-[1140px] my-12 mx-auto overflow-hidden rounded-lg shadow-[0_0_20px_#048c7330] bg-white">
       <WavesOpacityPresentation />

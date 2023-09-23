@@ -12,13 +12,10 @@ import { Listbox } from "@headlessui/react";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 
 export default function Perfil() {
-  const [user, setUser] = useState({});
-  const { setIsLogged } = useContext(UserContext);
+  const { setIsLogged, user, setUser} = useContext(UserContext);
   const navigate = useNavigate();
 
   const [error, setError] = useOutletContext();
-  const { path } = useParams();
-  const useSearch = useSearchParams();
 
   const [readOnly, setReadOnly] = useState(true);
 
@@ -26,7 +23,8 @@ export default function Perfil() {
     getProfile()
       .then((response) => {
         setUser(response);
-        // console.log(response.chavePix)
+        const name = () => { return response.name.split(' ')[0]}
+        sessionStorage.setItem("udt", name())
       })
       .catch((error) => {
         console.log(error);
@@ -36,13 +34,12 @@ export default function Perfil() {
         });
         handleLogout();
       });
-    console.log(path);
-    console.log(useSearch);
   }, []);
 
   function handleLogout() {
     setIsLogged(false);
     localStorage.removeItem("tjwt");
+    sessionStorage.removeItem("udt");
     navigate("/login");
   }
 
@@ -215,7 +212,7 @@ export function ChavePIX({ chavePix, readOnly }) {
               onClick={handleSelectArrow}
             >
               <p className="w-full h-full flex items-center justify-start px-1">
-                {readOnly ? chavePix?.chaveTipo : pixValue.name}
+                {readOnly && chavePix?.chaveTipo ? chavePix?.chaveTipo : pixValue.name}
               </p>
               <MdKeyboardArrowDown
                 className={`${

@@ -34,7 +34,7 @@ const router = createBrowserRouter([
         element: <Simulacao />,
       },
       {
-        path: "/perfil/:path",
+        path: "/perfil",
         element: (
           <PrivateRoute AuthUser={AuthUser}>
             <Perfil />
