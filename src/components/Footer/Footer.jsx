@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer(props) {
   return (
-    <footer className={`${props.page === '/perfil' ? 'ml-[210px]' : 'ml-0'} flex items-center justify-evenly flex-wrap px-8 py-2 gap-4`}>
+    <footer className={`${props.page === '/perfil' ? 'ml-[210px]' : 'ml-0'} flex items-center justify-evenly flex-wrap px-8 py-2 gap-4 z-10`}>
       <div className="footer 1 flex flex-wrap items-center gap-4">
         <div>
           <Link to="/" className="flex items-center text-[1.5rem]">

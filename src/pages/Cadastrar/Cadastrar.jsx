@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, useOutletContext } from "react-router-dom";
+import { Link, useNavigate, useOutletContext } from "react-router-dom";
 import { CreateUser } from "../../api/createUser";
 
 export default function Cadastrar() {
@@ -54,7 +54,7 @@ export default function Cadastrar() {
     }
 
     return ( 
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center min-h-[calc(100vh-180px)]">
             <form className="flex flex-col justify-between bg-white w-max sm:min-h-[20rem] sm:min-w-[20rem] sm:p-4 p-2 border-2 border-black rounded-lg gap-2" onSubmit={handleBtn}>
 
                 <h1 className="text-[1.5rem] font-[600] text-center">Crie sua Conta</h1>
@@ -92,7 +92,11 @@ export default function Cadastrar() {
                         As senhas não coincidem
                     </p>
 
-                    <span className="block text-center">Ja possui uma conta? Faça seu <a className="text-regular-green font-medium" href="./login">Login</a></span>
+                    <div className="block text-center">Ja possui uma conta? Faça seu&nbsp;                         
+                        <Link to='/login'>
+                                <span className="text-regular-green hover:border-b-2 hover:border-dark-green-opacity leading-none transition-all duration-[50ms]">Login</span>
+                        </Link>
+                    </div>
 
                 </div>
 
