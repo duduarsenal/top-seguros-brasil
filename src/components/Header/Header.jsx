@@ -8,7 +8,7 @@ export default function Header(props) {
     const {isLogged} = useContext(UserContext)
 
     return ( 
-        <nav className={`${props.page.path ? 'ml-[210px]' : 'ml-0'} flex justify-between h-[3.25rem] px-4`}>
+        <nav className={`flex justify-between h-[3.25rem] px-4 z-10 bg-white`}>
             <div className="flex gap-4 items-center">
                 <img src={Logo} alt="Logo TSB" className="w-[3rem] h-max"/>
                 <p className="font-[600] text-black-green text-[1.5rem]">Top Seguros Brasil</p>

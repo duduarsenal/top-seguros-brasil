@@ -19,13 +19,13 @@ export default function Sidebar(props) {
     }
 
     return ( 
-        <aside className={`${Sidebar ? 'cursor-auto' : 'cursor-pointer'} rounded-lg w-max fixed top-0 left-0 h-full transition-all duration-[400ms] ease-out bg-light-green-opacity flex flex-col justify-between`}>
+        <aside className={`${Sidebar ? 'cursor-auto' : 'cursor-pointer'} rounded-lg w-max fixed top-0 left-0 h-full transition-all duration-[400ms] ease-out bg-regular-green-opacity flex flex-col justify-between pt-[3.5rem] z-0`}>
 
             <ul className="flex flex-col items-center justify-center w-full overflow-hidden">
-                <li className={`${Sidebar ? 'justify-end bg-light-green-opacity' : ''} h-[3rem] flex gap-2 items-center w-full hover:bg-light-green-opacity py-4 px-4 cursor-pointer`}>           
+                {/* <li className={`${Sidebar ? 'justify-end bg-light-green-opacity' : ''} h-[3rem] flex gap-2 items-center w-full hover:bg-light-green-opacity py-4 px-4 cursor-pointer`}>           
                     <RiMenuUnfoldLine className={`${Sidebar ? 'hidden' : 'block'} text-[1.5rem] transition-all duration-300 min-w-max`}/>
                     <RiMenuFoldLine className={`${Sidebar ? 'block' : 'hidden'} text-[1.5rem] transition-all duration-300 min-w-max`}/>
-                </li>
+                </li> */}
                 <li className={`${Sidebar ? 'justify-start' : ''} h-[3.5rem] flex gap-2 items-center w-full hover:bg-light-green-opacity py-4 px-4 cursor-pointer`}>
                     <BsFillCalendarCheckFill className={`${Sidebar ? 'text-[1.2rem]' : 'text-[1.5rem]'} transition-all duration-300 min-w-max`}/>
                     <p className={`${Sidebar ? 'block' : ''} min-w-max text-[500] overflow-hidden`}>Finalizar Cadastro</p>
