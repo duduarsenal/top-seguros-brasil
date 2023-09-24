@@ -11,7 +11,7 @@ export default function Perfil() {
   function handleLogout() {
     setIsLogged(false);
     localStorage.removeItem("tjwt");
-    sessionStorage.removeItem("udt");
+    localStorage.removeItem("udt");
     navigate("/login");
   }
 

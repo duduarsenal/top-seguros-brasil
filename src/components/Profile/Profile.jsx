@@ -16,7 +16,7 @@ export default function Profile({handleLogout, user, setUser}) {
       .then((response) => {
         setUser(response);
         const name = () => { return response.name.split(' ')[0]}
-        sessionStorage.setItem("udt", name())
+        localStorage.setItem("udt", name())
       })
       .catch((error) => {
         console.log(error);

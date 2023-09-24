@@ -8,7 +8,7 @@ export default function Header(props) {
 
     const {isLogged, user} = useContext(UserContext)
     const [verPerfil, setVerPerfil] = useState(false)
-    const udt = sessionStorage.getItem('udt'); 
+    const udt = localStorage.getItem('udt'); 
 
     return ( 
         <nav className={`flex justify-between h-[3.25rem] px-4 z-10 bg-white`}>
