@@ -8,7 +8,7 @@ import CompleteRegister from "../../components/CompleteRegister/CompleteRegister
 export default function Perfil() {
   const { setIsLogged, user, setUser} = useContext(UserContext);
   const navigate = useNavigate();
-  const path = useLocation().pathname.split('/').slice(2,)[0];
+  const path = useLocation().pathname.split('/').at(2);
 
   function handleLogout() {
     setIsLogged(false);
