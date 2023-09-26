@@ -4,6 +4,7 @@ import { MdMedicalServices } from 'react-icons/md'
 import { BsFillShieldLockFill } from 'react-icons/bs'
 import { LuLogOut } from 'react-icons/lu'
 import { RiMenuUnfoldLine, RiMenuFoldLine } from 'react-icons/ri'
+import { Link } from "react-router-dom";
 
 export default function Sidebar(props) {
 
@@ -28,7 +29,7 @@ export default function Sidebar(props) {
                 </li> */}
                 <li className={`${Sidebar ? 'justify-start' : ''} h-[3.5rem] flex gap-2 items-center w-full hover:bg-light-green-opacity py-4 px-4 cursor-pointer`}>
                     <BsFillCalendarCheckFill className={`${Sidebar ? 'text-[1.2rem]' : 'text-[1.5rem]'} transition-all duration-300 min-w-max`}/>
-                    <p className={`${Sidebar ? 'block' : ''} min-w-max text-[500] overflow-hidden`}>Finalizar Cadastro</p>
+                    <Link to="/perfil/cadastro" className={`${Sidebar ? 'block' : ''} min-w-max text-[500] overflow-hidden`}>Finalizar Cadastro</Link>
                 </li>
                 <li className={`${Sidebar ? 'justify-start' : ''} h-[3.5rem] flex gap-2 items-center w-full hover:bg-light-green-opacity py-4 px-4 cursor-pointer`}>
                     <BsFillShieldLockFill className={`${Sidebar ? 'text-[1.2rem]' : 'text-[1.5rem]'} transition-all duration-300 min-w-max`}/>

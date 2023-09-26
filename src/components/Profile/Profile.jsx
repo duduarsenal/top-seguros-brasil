@@ -103,7 +103,7 @@ export function Endereco({ readOnly }) {
         <input
           type="text"
           disabled={readOnly}
-          className="outline-none h-8 px-1 bg-regular-green-opacity border-2 border-regular-green-opacity rounded-sm"
+          className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"
         />
       </div>
       <div className="flex justify-between">
@@ -112,7 +112,7 @@ export function Endereco({ readOnly }) {
           <input
             type="text"
             disabled={readOnly}
-            className="outline-none h-8 px-1 bg-regular-green-opacity border-2 border-regular-green-opacity rounded-sm"
+            className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"
           />
         </div>
         <div className="w-[60%] flex flex-col">
@@ -120,7 +120,7 @@ export function Endereco({ readOnly }) {
           <input
             type="text"
             disabled={readOnly}
-            className="outline-none h-8 px-1 bg-regular-green-opacity border-2 border-regular-green-opacity rounded-sm"
+            className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"
           />
         </div>
       </div>
@@ -130,7 +130,7 @@ export function Endereco({ readOnly }) {
           <input
             type="text"
             disabled={readOnly}
-            className="outline-none h-8 px-1 bg-regular-green-opacity border-2 border-regular-green-opacity rounded-sm"
+            className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"
           />
         </div>
         <div className="w-[45%] flex flex-col">
@@ -138,7 +138,7 @@ export function Endereco({ readOnly }) {
           <input
             type="text"
             disabled={readOnly}
-            className="outline-none h-8 px-1 bg-regular-green-opacity border-2 border-regular-green-opacity rounded-sm"
+            className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"
           />
         </div>
       </div>
@@ -148,7 +148,7 @@ export function Endereco({ readOnly }) {
           <input
             type="text"
             disabled={readOnly}
-            className="outline-none h-8 px-1 bg-regular-green-opacity border-2 border-regular-green-opacity rounded-sm"
+            className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"
           />
         </div>
         <div className="w-[60%] flex flex-col">
@@ -156,7 +156,7 @@ export function Endereco({ readOnly }) {
           <input
             type="text"
             disabled={readOnly}
-            className="outline-none h-8 px-1 bg-regular-green-opacity border-2 border-regular-green-opacity rounded-sm"
+            className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"
           />
         </div>
       </div>
@@ -186,7 +186,7 @@ export function ChavePIX({ chavePix, readOnly }) {
         <div className="relative w-full h-full">
           <Listbox value={pixValue} onChange={setPixValue} disabled={readOnly}>
             <Listbox.Button
-              className="flex w-full h-full bg-regular-green-opacity border-2 border-regular-green-opacity border-gray-500 rounded-sm"
+              className="flex w-full h-8 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"
               onClick={handleSelectArrow}
             >
               <p className="w-full h-full flex items-center justify-start px-1">
@@ -226,7 +226,7 @@ export function ChavePIX({ chavePix, readOnly }) {
           type="text"
           defaultValue={chavePix?.chaveValue}
           disabled={readOnly}
-          className="outline-none h-8 px-1 bg-regular-green-opacity border-2 border-regular-green-opacity rounded-sm"
+          className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"
         />
       </div>
     </section>
@@ -242,7 +242,7 @@ export function SeusSeguros({ readOnly }) {
         <input
           type="text"
           disabled={readOnly}
-          className="outline-none h-8 px-1 bg-regular-green-opacity border-2 border-regular-green-opacity rounded-sm"
+          className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"
         />
       </div>
       <div className="flex w-full justify-between">
@@ -251,7 +251,7 @@ export function SeusSeguros({ readOnly }) {
           <input
             type="text"
             disabled={readOnly}
-            className="outline-none h-8 px-1 bg-regular-green-opacity border-2 border-regular-green-opacity rounded-sm"
+            className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"
           />
         </div>
         <div className="w-[60%] flex flex-col">
@@ -259,7 +259,7 @@ export function SeusSeguros({ readOnly }) {
           <input
             type="text"
             disabled={readOnly}
-            className="outline-none h-8 px-1 bg-regular-green-opacity border-2 border-regular-green-opacity rounded-sm"
+            className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"
           />
         </div>
       </div>
