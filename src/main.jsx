@@ -9,9 +9,13 @@ import SeguroDetails from "./pages/SeguroDetails/SeguroDetails";
 import Login from "./pages/Login/Login";
 import Cadastrar from "./pages/Cadastrar/Cadastrar";
 import ErrorPage from "./pages/Error/ErrorPage";
-import Perfil from './pages/Perfil/Perfil'
+import Perfil from "./pages/Perfil/Perfil";
 
-import { createBrowserRouter, RouterProvider, useParams } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  useParams,
+} from "react-router-dom";
 import { PrivateRoute } from "./routes/PrivateRoute.jsx";
 import { AuthUser } from "./api/authUser.jsx";
 import { UserProvider } from "./context/UserContext.jsx";
@@ -22,7 +26,8 @@ const router = createBrowserRouter([
     element: (
       <UserProvider>
         <App />
-      </UserProvider>),
+      </UserProvider>
+    ),
     errorElement: <ErrorPage />,
     children: [
       {
@@ -37,19 +42,25 @@ const router = createBrowserRouter([
         path: "/perfil",
         element: (
           <PrivateRoute AuthUser={AuthUser}>
-            <Perfil />
+            <Perfil path="perfil" />
           </PrivateRoute>
         ),
-        
       },
       {
-        path: "/perfil/:path",
+        path: "/perfil/cadastro",
         element: (
           <PrivateRoute AuthUser={AuthUser}>
-            <Perfil />
+            <Perfil path="cadastro" />
           </PrivateRoute>
         ),
-        
+      },
+      {
+        path: "/perfil/serviços",
+        element: (
+          <PrivateRoute AuthUser={AuthUser}>
+            <Perfil path="serviços" />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",

@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom";
 import Logo from '../../assets/favicon.png'
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { UserContext } from "../../context/UserContext";
 import { FaUserCircle } from 'react-icons/fa';
 
-export default function Header(props) {
+export default function Header() {
 
-    const {isLogged, user} = useContext(UserContext)
+    const {isLogged} = useContext(UserContext)
     const [verPerfil, setVerPerfil] = useState(false)
     const udt = localStorage.getItem('udt'); 
 
     return ( 
-        <nav className={`flex justify-between h-[3.25rem] px-4 z-10 bg-white`}>
+        <nav className="flex justify-between h-[3.25rem] px-4 z-10 bg-white">
             <div className="flex gap-4 items-center">
                 <img src={Logo} alt="Logo TSB" className="w-[3rem] h-max"/>
                 <p className="font-[600] text-black-green text-[1.5rem]">Top Seguros Brasil</p>

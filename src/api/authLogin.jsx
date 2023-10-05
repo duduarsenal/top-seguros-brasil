@@ -1,6 +1,5 @@
 export async function AuthLogin(username, password){
     const urlAuth = `${import.meta.env.VITE_BACKEND_URL}/user/auth`;
-    const jwtToken = localStorage.getItem("tjwt");
 
     try {
         const urlResponse = await fetch(urlAuth, {

@@ -5,10 +5,10 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import Profile from "../../components/Profile/Profile";
 import CompleteRegister from "../../components/CompleteRegister/CompleteRegister";
 
-export default function Perfil() {
+export default function Perfil({path}) {
   const { setIsLogged, user, setUser} = useContext(UserContext);
   const navigate = useNavigate();
-  const path = useLocation().pathname.split('/').at(2);
+  // const path = useLocation().pathname.split('/').at(2);
 
   function handleLogout() {
     setIsLogged(false);
@@ -25,9 +25,9 @@ export default function Perfil() {
   return (
     <div className="flex items-center left-0">
       <Sidebar logout={handleLogout} />
-      {!path || path == 'profile' ? <Profile handleLogout={handleLogout} user={user} setUser={setUser}/> 
-      : path == 'cadastro' ? <CompleteRegister /> 
-      : ''
+      {path == 'perfil' ? <Profile handleLogout={handleLogout} user={user} setUser={setUser}/>: 
+      path == 'cadastro' ? <CompleteRegister /> :
+      path == 'serviços' ? "<Services />" : navigate("/error")
       }
     </div>
   );

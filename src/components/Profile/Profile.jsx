@@ -16,7 +16,7 @@ export default function Profile({handleLogout, user, setUser}) {
       .then((response) => {
         setUser(response);
         const name = () => { return response.name.split(' ')[0]}
-        localStorage.setItem("udt", name())
+        localStorage.setItem("udt", name()) 
       })
       .catch((error) => {
         console.log(error);
@@ -38,7 +38,7 @@ export default function Profile({handleLogout, user, setUser}) {
           tel={user.tel}
           readOnly={readOnly}
         />
-        <Endereco readOnly={readOnly} />
+        <Endereco readOnly={readOnly} endereco={user.endereco} />
       </form>
       <form className="w-full flex justify-center gap-24 flex-wrap">
         <ChavePIX chavePix={user.chavePix} readOnly={readOnly} />
@@ -94,7 +94,7 @@ export function DadosPessoais({ name, document, tel, email, readOnly }) {
   );
 }
 
-export function Endereco({ readOnly }) {
+export function Endereco({ readOnly, endereco }) {
   return (
     <section className="w-[45%]">
       <h1 className="text-[1.25rem] font-[500]">Endereço</h1>
@@ -103,6 +103,7 @@ export function Endereco({ readOnly }) {
         <input
           type="text"
           disabled={readOnly}
+          defaultValue={endereco?.rua}
           className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"
         />
       </div>
@@ -112,6 +113,7 @@ export function Endereco({ readOnly }) {
           <input
             type="text"
             disabled={readOnly}
+            defaultValue={endereco?.numero}
             className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"
           />
         </div>
@@ -120,6 +122,7 @@ export function Endereco({ readOnly }) {
           <input
             type="text"
             disabled={readOnly}
+            defaultValue={endereco?.complemento}
             className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"
           />
         </div>
@@ -130,6 +133,7 @@ export function Endereco({ readOnly }) {
           <input
             type="text"
             disabled={readOnly}
+            defaultValue={endereco?.bairro}
             className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"
           />
         </div>
@@ -138,6 +142,7 @@ export function Endereco({ readOnly }) {
           <input
             type="text"
             disabled={readOnly}
+            defaultValue={endereco?.cep}
             className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"
           />
         </div>
@@ -148,6 +153,7 @@ export function Endereco({ readOnly }) {
           <input
             type="text"
             disabled={readOnly}
+            defaultValue={endereco?.cidade}
             className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"
           />
         </div>
@@ -156,6 +162,7 @@ export function Endereco({ readOnly }) {
           <input
             type="text"
             disabled={readOnly}
+            defaultValue={endereco?.uf}
             className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"
           />
         </div>
