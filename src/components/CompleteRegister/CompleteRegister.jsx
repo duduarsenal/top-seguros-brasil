@@ -2,6 +2,7 @@ import { Listbox } from "@headlessui/react";
 import { useEffect, useState } from "react";
 import { MdKeyboardArrowUp, MdKeyboardArrowDown } from "react-icons/md";
 import { cRegister } from "../../api/cRegister";
+import InputMask from "react-input-mask";
 
 export default function CompleteRegister() {
   const pixValues = [
@@ -113,6 +114,7 @@ export default function CompleteRegister() {
               <label htmlFor="">Rua</label>
               <input
                 type="text"
+                placeholder="Rua Joaquim da Serra"
                 value={rua}
                 onChange={(e) => setRua(e.target.value)}
                 onKeyUp={(e) => handleError(e.target)}
@@ -124,6 +126,7 @@ export default function CompleteRegister() {
                 <label htmlFor="">Número</label>
                 <input
                   type="text"
+                  placeholder="105"
                   onChange={(e) => setNumero(e.target.value)}
                   onKeyUp={(e) => handleError(e.target)}
                   className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"
@@ -133,6 +136,7 @@ export default function CompleteRegister() {
                 <label htmlFor="">Complemento</label>
                 <input
                   type="text"
+                  placeholder="Casa 2"
                   onChange={(e) => setComplemento(e.target.value)}
                   className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"
                 />
@@ -143,6 +147,7 @@ export default function CompleteRegister() {
                 <label htmlFor="">Bairro</label>
                 <input
                   type="text"
+                  placeholder="Jabaquara"
                   value={bairro}
                   onChange={(e) => setBairro(e.target.value)}
                   onKeyUp={(e) => handleError(e.target)}
@@ -151,30 +156,35 @@ export default function CompleteRegister() {
               </div>
               <div className="w-[45%] flex flex-col">
                 <label htmlFor="">CEP</label>
-                <input
-                  type="text"
+                <InputMask 
+                  mask="99999-999"
+                  placeholder="11085-080" 
                   onChange={(e) => setCep(e.target.value)}
+                  maskChar={null}
                   onBlur={() => cep && getViaCep()}
-                  onKeyUp={(e) => handleError(e.target)}
-                  className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"
-                />
+                  onKeyUp={(e) => handleError(e.target)}>
+                    {(inputProps) => <input {...inputProps} type="text"
+                    className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"/>}
+                </InputMask>
               </div>
             </div>
             <div className="flex justify-between">
-              <div className="w-[30%] flex flex-col">
+              <div className="w-[55%] flex flex-col">
                 <label htmlFor="">Cidade</label>
                 <input
                   type="text"
+                  placeholder="São Bernardo do Campo"
                   value={cidade}
                   onChange={(e) => setCidade(e.target.value)}
                   onKeyUp={(e) => handleError(e.target)}
                   className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"
                 />
               </div>
-              <div className="w-[60%] flex flex-col">
+              <div className="w-[35%] flex flex-col">
                 <label htmlFor="">Estado</label>
                 <input
                   type="text"
+                  placeholder="Rio Grande do Norte"
                   value={estado}
                   onChange={(e) => setEstado(e.target.value)}
                   onKeyUp={(e) => handleError(e.target)}
@@ -190,21 +200,29 @@ export default function CompleteRegister() {
             <div className="flex justify-between">
               <div className="flex flex-col w-[45%]">
                 <label>Documento</label>
-                <input
-                  type="text"
-                  onChange={(e) => setDoc(e.target.value)}
-                  onKeyUp={(e) => handleError(e.target)}
-                  className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"
-                />
+                  <InputMask
+                    mask="999.999.999-99"
+                    placeholder="123.456.789-10"
+                    maskChar={null}
+                    type="text"
+                    onChange={(e) => setDoc(e.target.value.replace(/[/. -]/g, ''))}
+                    onKeyUp={(e) => handleError(e.target)}
+                    className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"
+                  >
+                </InputMask>
               </div>
               <div className="w-[45%] flex flex-col">
                 <label htmlFor="">Telefone</label>
-                <input
+                <InputMask
+                  mask="(99) 99999-9999"
+                  placeholder="(11) 98179-1234"
+                  maskChar={null}
                   type="text"
-                  onChange={(e) => setTel(e.target.value)}
+                  onChange={(e) => setTel(e.target.value.replace(/[( ) -]/g, ''))}
                   onKeyUp={(e) => handleError(e.target)}
                   className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"
-                />
+                  >
+                </InputMask>
               </div>
             </div>
           </section>
@@ -251,7 +269,11 @@ export default function CompleteRegister() {
               <label htmlFor="">Chave</label>
               <input
                 type="text"
-                onChange={(e) => 
+                placeholder={
+                pixValue.name == 'Documento' ? '123.456.789-10' : 
+                pixValue.name == 'Telefone' ? '(11) 98179-1234' : 
+                pixValue.name == 'E-mail' ? 'email@gmail.com' : 'dbbf965d-677c-49ff-b9da-5131da15'} 
+                onChange={(e) =>
                   setChavePix({
                     chaveValue: e.target.value,
                     chaveTipo: pixValue.name,

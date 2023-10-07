@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
-import { useOutletContext } from "react-router-dom";
-import { getProfile } from "../../api/getInfos";
+// import { useOutletContext } from "react-router-dom";
 
 import { Listbox } from "@headlessui/react";
+import InputMask from 'react-input-mask';
+
+import { getProfile } from "../../api/getInfos";
+
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 
 export default function Profile({handleLogout, user, setUser}) {
     
-  const [error, setError] = useOutletContext();
+  // const [error, setError] = useOutletContext();
 
   const [readOnly, setReadOnly] = useState(true);
 
@@ -20,10 +23,10 @@ export default function Profile({handleLogout, user, setUser}) {
       })
       .catch((error) => {
         console.log(error);
-        setError({
-          state: true,
-          message: "Erro na conexão, tente novamente mais tarde",
-        });
+        // setError({
+        //   state: true,
+        //   message: "Erro na conexão, tente novamente mais tarde",
+        // });
         handleLogout();
       });
   }, []);
@@ -64,21 +67,17 @@ export function DadosPessoais({ name, document, tel, email, readOnly }) {
       <div className="flex flex-wrap justify-between">
         <div className="w-[45%] flex flex-col">
           <label htmlFor="">Documento</label>
-          <input
-            type="text"
-            defaultValue={document}
-            disabled={readOnly}
-            className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"
-          />
+          <InputMask mask="999.999.999-99" disabled={readOnly} value={document}>
+            {(inputProps) => <input {...inputProps} type="text"
+            className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem] pointer-events-none"/>}
+          </InputMask>
         </div>
         <div className="w-[45%] flex flex-col">
           <label htmlFor="">Telefone</label>
-          <input
-            type="text"
-            defaultValue={tel}
-            disabled={readOnly}
-            className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"
-          />
+          <InputMask mask="(99) 99999-9999" disabled={readOnly} value={tel}>
+            {(inputProps) => <input {...inputProps} type="text"
+            className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem] pointer-events-none"/>}
+          </InputMask>
         </div>
       </div>
       <div className="w-full flex flex-col">
@@ -139,16 +138,14 @@ export function Endereco({ readOnly, endereco }) {
         </div>
         <div className="w-[45%] flex flex-col">
           <label htmlFor="">CEP</label>
-          <input
-            type="text"
-            disabled={readOnly}
-            defaultValue={endereco?.cep}
-            className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"
-          />
+          <InputMask mask="99999-999" disabled={readOnly} value={endereco?.cep}>
+            {(inputProps) => <input {...inputProps} type="text"
+            className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem] pointer-events-none"/>}
+            </InputMask>
         </div>
       </div>
       <div className="flex justify-between">
-        <div className="w-[30%] flex flex-col">
+        <div className="w-[55%] flex flex-col">
           <label htmlFor="">Cidade</label>
           <input
             type="text"
@@ -157,7 +154,7 @@ export function Endereco({ readOnly, endereco }) {
             className="outline-none h-8 px-1 bg-[#ffffff] border-2 border-dark-green-opacity rounded-[0.2rem]"
           />
         </div>
-        <div className="w-[60%] flex flex-col">
+        <div className="w-[35%] flex flex-col">
           <label htmlFor="">Estado</label>
           <input
             type="text"

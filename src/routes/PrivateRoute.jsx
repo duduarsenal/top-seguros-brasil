@@ -4,14 +4,16 @@ export function PrivateRoute({children, AuthUser}){
 
     const user = AuthUser();
 
-    if (!user){
-        return ( 
-            <>
-                {console.log("Unauthorized")}
-                <Navigate to="/login"/> 
-            </>
-        )
-    }
+    user.then((user) => {
+            if (!user){
+                return ( 
+                    <>
+                        {console.log("Unauthorized")}
+                        <Navigate to="/login"/> 
+                    </>
+                )
+            }
+    })
 
     return children;
 }

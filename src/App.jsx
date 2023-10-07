@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Outlet, useNavigate, useParams, useSearchParams } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -8,13 +8,19 @@ import ErrorPopup from "./components/ErrorPopup/ErrorPopup";
 import { TriangleTop, WavesOpacityBottom } from "./components/Shapes/Shapes";
 import { AuthUser } from "./api/authUser";
 import { UserContext } from "./context/UserContext";
-function App() {
+
+export default function App() {
   const [error, setError] = useState({ state: false, message: "Error Message" });
   const {setIsLogged} = useContext(UserContext);
 
   useEffect(() => {
-    setIsLogged(AuthUser());
-  }, [])
+    let response = AuthUser();
+
+    response.then((data) => {
+      setIsLogged(data);
+    })
+  
+  }, []);
 
   // useEffect(() => {
   //   console.log(path)
@@ -35,5 +41,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
